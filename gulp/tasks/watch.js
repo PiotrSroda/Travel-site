@@ -21,10 +21,19 @@ gulp.task('watch', function() {
 
   });
 
+  watch('./app/assets/scripts/**/*.js', function() {
+    gulp.start('scriptsRefresh');
+  })
+
 });
 
 gulp.task('cssInject', ['styles'], function() { // [] DEPENDENCIES !!!!!!! - First you must start AND complete STYLES is the DEPENDENCY of cssInject
   return gulp.src('./app/temp/styles/styles.css') //return as gulp is an async task RETURN says it needs to first fully load before handing it over
   .pipe(browserSync.stream());
+
+})
+
+gulp.task('scriptsRefresh', ['scripts'], function() { // [] DEPENDENCIES !!!!!!! - First you must start AND complete STYLES is the DEPENDENCY of cssInject
+  browserSync.reload();
 
 })
