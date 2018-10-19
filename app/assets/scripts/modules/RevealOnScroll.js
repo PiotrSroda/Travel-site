@@ -6,7 +6,7 @@ class RevealOnScroll {
     this.itemsToReveal = els;
     this.offsetPercentage = offset;
     this.hideInitially();
-    this.crateWaypoints();    
+    this.crateWaypoints();
   }
 
   hideInitially(){
@@ -14,6 +14,7 @@ class RevealOnScroll {
   }
 
   crateWaypoints(){
+    var offPer = this.offsetPercentage;
     var that = this;
     this.itemsToReveal.each(function() {
       var currentItem = this;
@@ -22,7 +23,7 @@ class RevealOnScroll {
         handler: function() {
           $(currentItem).addClass("reveal-item--is-visible");
         },
-        offset: that.offsetPercentage
+        offset: offPer
       });
     });
   }
