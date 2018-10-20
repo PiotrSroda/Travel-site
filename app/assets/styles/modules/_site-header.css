@@ -41,7 +41,7 @@
       transform: translateX(0);
 
       .site-header--dark & { /* this will only apply when .site-header--dark AND site-header__logo are applied */
-        transform: scale(.57)
+        transform: scale(.56)
       }
     }
 
